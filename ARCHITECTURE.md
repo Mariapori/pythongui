@@ -39,3 +39,36 @@ Sovellus noudattaa yksinkertaista **Client-Server** -mallia, jossa sovellus toim
 ## 5. Keskeiset rakenteet
 *   **`SKILL_MAP`:** Sanakirja, joka toimii sovelluksen sisäisenä tietokantana taitojen ID-tunnusten ja nimien välillä.
 *   **`Treeview`:** Käytetään tehokkaana tapana esittää monimutkaista, taulukkomuotoista tietoa (Skill, Level, XP).
+
+## 6. Rajapinnat (APIs)
+
+### Käytetyt rajapinnat (Current APIs)
+Sovellus hyödyntää pääasiassa **Runemetrics API** -rajapintaa pelaajien tilastojen hakuun.
+
+*   **Runemetrics Profile API:**
+    *   `profile`: Hakee pelaajan profiilitiedot (nimi, sijoitus, kokonais-XP, combat level ja taitotasot).
+    *   `quests`: Palauttaa listan pelaajan suorittamista tehtävistä.
+    *   `xp-monthly`: Tarjoaa tietoa kuukausittaisista XP-tasoista.
+
+### Muut saatavilla olevat rajapinnat (Other Available APIs)
+Wiki-dokumentaation perusteella sovellukseen voidaan myöhemmin integroida seuraavia rajapintoja:
+
+*   **Grand Exchange Database API:**
+    *   `catalogue/detail`: Tuotekohtaiset tiedot, kuten nykyinen hinta ja trendit.
+    *   `catalogue/items`: Tuoteluettelot kategorioittain.
+    *   `graph`: Hintahistoria (viimeiset 180 päivää).
+    *   `obj_big` / `obj_sprite`: Tuotteiden kuvat (ikoni ja yksityiskohtainen kuva).
+*   **Hiscores API:**
+    *   `ranking`: Pelaajien sijoitukset eri taulukoissa.
+    *   `index_lite`: Pelaajan taso ja XP tietyissä taulukoissa (esim. Ironman-tilastot).
+    *   `clanRanking` / `userClanRanking`: Klaanitiedot ja sijoitukset.
+    *   `groups`: Boss-tappojen ja ryhmä-Ironmanin tilastot.
+*   **Website Data API:**
+    *   `playerDetails`: Pelaajan titteli, klaani ja online-tila.
+    *   `playerFriendsDetails`: Pelaajan ystävälista.
+    *   `avatardetails`: Pelaajan hahmon ulkonäkö (avatar).
+*   **Muut hyödylliset rajapinnat:**
+    *   `player_count`: Reaaliaikainen tieto online-pelaajien määrästä.
+    *   `rsusertotal`: Rekisteröityjen tilien kokonaismäärä.
+    *   `changelog`: Pelin päivitysten lokitiedot.
+
